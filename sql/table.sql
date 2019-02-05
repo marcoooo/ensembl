@@ -2623,7 +2623,9 @@ CREATE TABLE operon_transcript_gene (
 @column rnaproduct_type_id          Foreign key references to the @link rnaproduct_type table.
 @column transcript_id               Foreign key references to the @link transcript table.
 @column seq_start                   1-based offset into the relative coordinate system of transcript_id.
+@column start_exon_id               Foreign key references to the @link exon table.
 @column seq_end                     1-based offset into the relative coordinate system of transcript_id.
+@column end_exon_id                 Foreign key references to the @link exon table.
 @column stable_id                   Release-independent stable identifier.
 @column version                     Stable identifier version number.
 @column created_date                Date created.
@@ -2637,7 +2639,9 @@ CREATE TABLE rnaproduct (
   rnaproduct_type_id          SMALLINT(5) UNSIGNED NOT NULL,
   transcript_id               INT(10) UNSIGNED NOT NULL,
   seq_start                   INT(10) NOT NULL,       # relative to transcript start
+  start_exon_id               INT(10) UNSIGNED,
   seq_end                     INT(10) NOT NULL,       # relative to transcript start
+  end_exon_id                 INT(10) UNSIGNED,
   stable_id                   VARCHAR(128) DEFAULT NULL,
   version                     SMALLINT UNSIGNED DEFAULT NULL,
   created_date                DATETIME DEFAULT NULL,
