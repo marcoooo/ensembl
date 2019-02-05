@@ -916,7 +916,9 @@ CREATE TABLE rnaproduct (
   rnaproduct_type_id          SMALLINT(5) UNSIGNED NOT NULL,
   transcript_id               INT(10) UNSIGNED NOT NULL,
   seq_start                   INT(10) NOT NULL,       # relative to transcript start
-  seq_end                     INT(10) NOT NULL,       # relative to exon start
+  start_exon_id               INT(10) UNSIGNED,
+  seq_end                     INT(10) NOT NULL,       # relative to transcript start
+  end_exon_id                 INT(10) UNSIGNED,
   stable_id                   VARCHAR(128) DEFAULT NULL,
   version                     SMALLINT UNSIGNED DEFAULT NULL,
   created_date                DATETIME DEFAULT NULL,
