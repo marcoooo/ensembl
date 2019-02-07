@@ -110,3 +110,4 @@
 2117	\N	patch	patch_94_95_b.sql|vertebrate_division_rename
 2118	\N	patch	patch_94_95_c.sql|ox_key_update
 2119	\N	patch	patch_95_96_a.sql|schema_version
+2120	\N	patch	patch_95_96_b.sql|biotype_so_term
