@@ -59,7 +59,7 @@ throws_ok { $biotype1->object_type('test') } qr/object_type must be gene or tran
 # test transcript biotype object
 my $transcript = $gene->canonical_transcript;
 debug("transcript biotype");
-is($transcript->biotype, 'protein_coding', "Trancript biotype is protein_coding");
+is($transcript->biotype, 'protein_coding', "Transcript biotype is protein_coding");
 my $biotype2 = $transcript->get_Biotype;
 ok($biotype2->isa("Bio::EnsEMBL::Biotype"), "Biotype object retrieved successfully");
 is($biotype2->object_type, 'transcript', 'Biotype is from Transcript object');
@@ -99,7 +99,7 @@ my $biotypes1 = $biotype_adaptor->fetch_all_by_object_type('gene');
 is(ref $biotypes1, 'ARRAY', 'Got an array');
 is(scalar @{$biotypes1}, '2', 'of size 2');
 is_deeply($biotypes1, [$biotype1, $biotype3], 'with the correct objects');
-my $warning1 = warning { 
+my $warning1 = warning {
   $biotypes1 = $biotype_adaptor->fetch_all_by_object_type('none') };
 like( $warning1,
     qr/No objects retrieved. Check if object_type 'none' is correct./,
