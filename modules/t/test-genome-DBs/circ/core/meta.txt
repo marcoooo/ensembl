@@ -126,3 +126,4 @@
 126	\N	patch	patch_94_95_b.sql|vertebrate_division_rename
 127	\N	patch	patch_94_95_c.sql|ox_key_update
 128	\N	patch	patch_95_96_a.sql|schema_version
+129	\N	patch	patch_95_96_b.sql|biotype_so_term
